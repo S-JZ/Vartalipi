@@ -1,0 +1,66 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle" src="{{ user.profile.image.url }}">
+        <div class="media-body pt-3">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+    </div>
+
+    <form method="POST" id='pro' class="form-control" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ u_form|crispy}}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group pt-3">
+            <button type="submit" class="btn btn-outline-warning">Update</button>
+        </div>
+    </form>
+</div>
+<div class='content-section'>
+    <h2 class="account-heading">Notes</h2>
+    <div class="row">
+        <div class="col-lg-6">
+            {%if posts%}
+            {% for post in posts %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <a href="{{ post.note.url }}"><img src="{% static 'assets/img/doc.jpg' %}" class="img-fluid rounded-start" alt="..."></a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text mt-5">{{ post.description }}</p>
+                        </div>
+                    </div>
+                    <a
+                    class="btn btn-outline-danger"
+                    href="{% url 'post-delete' post.id %}"
+                    >Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %} 
+        <p> No notes uploaded </p>
+        {% endif %}
+        </div>
+    </div>
+    <legend class="border-bottom mb-4">Upload Note</legend>
+    <form class="form-control" method="post" action={%url 'create-post'%} enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{{ form|crispy }}</p>
+
+
+        <p><input class="btn btn-outline-warning" type="submit" value="Upload"/></p>
+    </form>
+</div>
+</div>
+{% endblock content %}
