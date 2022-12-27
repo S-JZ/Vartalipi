@@ -33,7 +33,7 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
-ALLOWED_HOSTS = ['http://vartalipi.azurewebsites.net/']
+ALLOWED_HOSTS = ['*']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Application definition
