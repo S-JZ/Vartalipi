@@ -1,5 +1,6 @@
+<a href="url"><img src="https://github.com/S-JZ/Vartalipi/blob/master/braille/static/assets/img/favicon.png" align="right" height="170" width="170" ></a>
 # Vartalipi
-![Vartalipi](https://github.com/S-JZ/Vartalipi/blob/master/braille/static/assets/img/favicon.png)
+
 > Although the world is full of suffering, it is full also of the overcoming of it. 
 ><p align="center">~ Helen Keller</p>
 
