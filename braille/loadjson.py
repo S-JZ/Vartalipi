@@ -1,6 +1,6 @@
 def return_gist_id():
     return {
-        "hin": "a467db04321a29414cd87e04b0c901d1"
+        "hin": "SECRET_KEY"
     }
 
 
