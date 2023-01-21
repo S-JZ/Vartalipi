@@ -33,7 +33,7 @@ $ python manage.py runserver
 - Choose your preferred language when prompted.
 - You can now speak your mind and Vartalipi will transcribe it for you.
 
-### [Demo Link](https://drive.google.com/file/d/1Nj7PqBFoAj9xujCA4GxFc-5YKx2tMpqt/view?usp=share_link)
+### [Video Demo](https://drive.google.com/file/d/1Nj7PqBFoAj9xujCA4GxFc-5YKx2tMpqt/view?usp=share_link)
 
 ## Troubleshooting
 - Sometimes Vartalipi needs help to catch the name of the language spoken. In such a scenario, don’t panic, just try again :)
